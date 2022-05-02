@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Livewire\AsignarController;
 use App\Http\Livewire\HabitacionesController;
 use App\Http\Livewire\InicioHotelController;
+use App\Http\Livewire\PermisosController;
+use App\Http\Livewire\RolesController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +30,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/habitaciones', HabitacionesController::class)->name('habitacion');
     Route::get('/inicio', InicioHotelController::class)->name('inicio');
 });
+Route::get('roles', RolesController::class);
+Route::get('permisos', PermisosController::class);
+Route::get('asignar', AsignarController::class);
