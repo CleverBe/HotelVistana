@@ -26,6 +26,7 @@ class PermisosController extends Component
     {
         $this->pageTitle = 'Listado';
         $this->componentName = 'Permisos';
+        $this->selected_id = 0;
     }
 
     public function render()

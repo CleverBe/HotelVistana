@@ -16,15 +16,16 @@ class AsignarController extends Component
     public $role, $componentName, $permisosSelected = [], $old_permissions =[];
     private $pagination = 10;
 
-    public function paginationView()
+   /*  public function paginationView()
     {
         return 'vendor.livewire.bootstrap';
-    }
+    } */
 
     public function mount()
     {
         $this->role = 'Elegir';
         $this->componentName = 'Asignar Permisos';
+        $this->selected_id =0;
     }
 
     public function render()
@@ -97,6 +98,8 @@ class AsignarController extends Component
                 $this->emit('permi','Permiso eliminado correctamente');
             }
 
+        }else{
+            $this->emit('permi',"Elige un rol válido");
         }
     }
 

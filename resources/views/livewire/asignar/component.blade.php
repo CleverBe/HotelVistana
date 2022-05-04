@@ -69,7 +69,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $permisos->links() }}
+                            <!-- {{ $permisos->links() }} -->
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
             confirmButtonText: 'Si , Eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.livewire.emit('revokeall', id)
+                window.livewire.emit('revokeall')
                 Swal.fire(
                     'Revocado!',
                     'Los permisos fueron revocados con éxito!'
