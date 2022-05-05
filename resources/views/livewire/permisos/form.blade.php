@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
-                            <h6>Precio</h6>
+                            <h6>Nombre del permiso</h6>
                             <input type="text" wire:model.lazy="permissionName" class="form-control" placeholder="ej: VerRoles_Index" maxlength="255">
                             @error('permissionName')
                             <span class="text-danger er">{{ $message }}</span>

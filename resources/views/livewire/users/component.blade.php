@@ -42,8 +42,8 @@
                                     <h6 class="text-center">{{ $r->profile }}</h6>
                                 </td>
                                 <td>
-                                    <span class="badge {{ $r->status == 'Active' ? 'badge-success' : 'badge-danger' }}
-                                    text-uppercase">{{ $r->profile }}</span>
+                                    <span class="badge {{ $r->status == 'ACTIVE' ? 'badge-success' : 'badge-danger' }}
+                                    text-uppercase">{{ $r->status }}</span>
                                 </td>
                                 
                                 <td class="text-center">
@@ -90,7 +90,7 @@
         window.livewire.on('show-modal', msg => {
             $('#theModal').modal('show')
         });
-        window.livewire.on('user-withsales', msg => {
+        window.livewire.on('user-msg', msg => {
             noty(msg)
         });
         

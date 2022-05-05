@@ -7,6 +7,7 @@ use App\Http\Livewire\InicioHotelController;
 use App\Http\Livewire\PermisosController;
 use App\Http\Livewire\ReporteReservasController;
 use App\Http\Livewire\RolesController;
+use App\Http\Livewire\UsersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +40,4 @@ Route::get('asignar', AsignarController::class);
 Route::get('reporteDeReservas', ReporteReservasController::class);
 Route::get('reporteReservas/pdf/{user}/{type}/{f1}/{f2}', [ExportReservasPdfController::class, 'reportPDF']);
 Route::get('reporteGananciaTigoM/pdf/{user}/{type}', [ExportReservasPdfController::class, 'reportPDF']);
+Route::get('users', UsersController::class);
