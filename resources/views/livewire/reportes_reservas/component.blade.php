@@ -44,12 +44,12 @@
                                 class="form-control">
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-2 mt-4">
+                    <!-- <div class="col-sm-12 col-md-2 mt-4">
                         <a class=" btn btn-dark btn-block {{ count($data) < 1 ? 'disabled' : '' }}"
                             href="{{ url('reporteReservas/pdf' . '/' . $userId . '/' . $reportType . '/' . $dateFrom . '/' . $dateTo) }}">
                             Generar
                             PDF</a>
-                    </div>
+                    </div> -->
 
 
                     <div class="col-sm-12 col-md-12">
@@ -58,7 +58,7 @@
                                 <thead class="text-white" style="background: #c5c6cc">
                                     <tr>
                                         <th class="table-th text-withe text-center">NOMBRE CLIENTE</th>
-                                        <th class="table-th text-withe text-center">EMAIL CLIENTE</th>
+                                        <th class="table-th text-withe text-center">TELÉFONO CLIENTE</th>
                                         <th class="table-th text-withe text-center">NUM. HABITACION</th>
                                         <th class="table-th text-withe text-center">TIPO</th>
                                         <th class="table-th text-withe text-center">PISO</th>
@@ -84,7 +84,7 @@
                                                 <h6>{{ $d->user }}</h6>
                                             </td>
                                             <td class="text-center">
-                                                <h6>{{ $d->email }}</h6>
+                                                <h6>{{ $d->phone }}</h6>
                                             </td>
                                             <td class="text-center">
                                                 <h6>{{ $d->numero_habitacion }}</h6>

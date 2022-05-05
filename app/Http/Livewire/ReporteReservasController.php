@@ -58,7 +58,7 @@ class ReporteReservasController extends Component
                     'reservas.*',
                     'r.*',
                     'u.name as user',
-                    'u.email',
+                    'u.phone',
                 )
                 ->whereBetween('reservas.created_at', [$from, $to])
                 ->get();
@@ -70,7 +70,7 @@ class ReporteReservasController extends Component
                     'reservas.*',
                     'r.*',
                     'u.name as user',
-                    'u.email',
+                    'u.phone',
                 )
                 ->whereBetween('reservas.created_at', [$from, $to])
                 ->where('user_id', $this->userId)
