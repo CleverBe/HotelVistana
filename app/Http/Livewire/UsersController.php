@@ -41,8 +41,8 @@ class UsersController extends Component
             ->select('*')->orderBy('name','asc')
             ->paginate($this->pagination);
         }else{
-            $data=User::select('*')->orderBy('name','asc')
-            ->paginate($this->pagination);
+            $data=User::/* select('*')-> */orderBy('name','asc')
+            ->get();
 
         }
         
@@ -101,7 +101,7 @@ class UsersController extends Component
             'password.min' => 'El password debe tener al menos 3 caracteres'
         ];
 
-        $this->validate($rules, $messages);
+        /* $this->validate($rules, $messages); */
 
         DB::beginTransaction();
         try {
@@ -148,7 +148,7 @@ class UsersController extends Component
             'password.min' => 'El password debe tener al menos 3 caracteres'
         ];
 
-        $this->validate($rules, $messages);
+        /* $this->validate($rules, $messages); */
 
         $user=User::find($this->selected_id);
         $user->update([

@@ -71,7 +71,7 @@
                             <select wire:model.lazy="profile" class="form-control">
                                 <option value="Elegir" selected>Elegir</option>
                                 @foreach($roles as $role)
-                                <option value="{{$role->id}}" selected>{{$role->name}}</option>
+                                <option value="{{$role->name}}">{{$role->name}}</option>
                                 @endforeach
                             </select>
                             @error('profile')
