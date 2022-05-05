@@ -90,7 +90,7 @@
         window.livewire.on('show-modal', msg => {
             $('#theModal').modal('show')
         });
-        window.livewire.on('user-withsales', msg => {
+        window.livewire.on('user-msg', msg => {
             noty(msg)
         });
         

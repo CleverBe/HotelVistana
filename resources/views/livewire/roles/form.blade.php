@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
-                            <h6>Precio</h6>
+                            <h6>Nombre del rol</h6>
                             <input type="text" wire:model.lazy="roleName" class="form-control" placeholder="ej: Admin" maxlength="255">
                             @error('roleName')
                             <span class="text-danger er">{{ $message }}</span>

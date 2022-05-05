@@ -35,7 +35,7 @@
                                     <tr>
                                         <th class="table-th text-withe text-center">ID</th>
                                         <th class="table-th text-withe text-center">PERMISO</th>
-                                        <th class="table-th text-withe text-center">ROLES CON EL PERMISO</th>
+                                        <!-- <th class="table-th text-withe text-center">ROLES CON EL PERMISO</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -61,9 +61,9 @@
                                             </div>
                                         </td>
 
-                                        <td class="text-center">
+                                       <!--  <td class="text-center">
                                             <h6>{{ \App\Models\User::permission($permiso->name)->count() }}</h6>
-                                        </td>
+                                        </td> -->
 
                                     </tr>
                                     @endforeach
