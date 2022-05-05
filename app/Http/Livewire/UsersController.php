@@ -57,16 +57,7 @@ class UsersController extends Component
         ->section('content');
     }
 
-    public function resetUI()
-    {
-        $this->name ='';
-        $this->email='';
-        $this->password='';
-        $this->phone='';
-        $this->search='';
-        $this->status='Elegir';
-        $this->selected_id=0;
-    }
+    
 
     public function Edit(User $user)
     {
@@ -168,6 +159,10 @@ class UsersController extends Component
             'profile' => $this->profile,
             'password' => bcrypt($this->password)
         ]);
+        $user->syncRoles($this->profile);
+
+        $this->resetUI();
+        $this->emit('user-updated', 'Usuario Actualizado');
     }
 
     public function destroy(User $user)
@@ -175,6 +170,18 @@ class UsersController extends Component
         $user->delete();
         $this->resetUI();
         $this->emit('user-deleted','Usuario eliminado');
+    }
+
+    public function resetUI()
+    {
+        $this->name ='';
+        $this->email='';
+        $this->password='';
+        $this->phone='';
+        $this->search='';
+        $this->status='Elegir';
+        $this->selected_id=0;
+        $this->resetValidation();
     }
 
 }
