@@ -38,16 +38,15 @@ class InicioHotelController extends Component
     public function render()
     {
         if ($this->num_noches > 0) {
-            $this->fecha_fin = strtotime('+' . $this->num_noches . ' day', strtotime($this->fecha_inicio));
+            $NOCHES = $this->num_noches - 1;
+            $this->fecha_fin = strtotime('+' . $NOCHES . ' day', strtotime($this->fecha_inicio));
             $this->fecha_fin = date('Y-m-d', $this->fecha_fin);
             $this->total = $this->precio * $this->num_noches;
         }
 
-        if (strlen($this->search) > 0) {
-            $data = Room::where('tipo', 'like', $this->search . '%')->paginate($this->pagination);
-        } else {
-            $data = Room::orderBy('id', 'desc')->paginate($this->pagination);
-        }
+
+        $data = Room::orderBy('id', 'desc')->where('disponibilidad', 'SI')->paginate($this->pagination);
+
         return view('livewire.inicioHotel.component', [
             'data' => $data,
         ])
@@ -82,7 +81,7 @@ class InicioHotelController extends Component
             'total' => $this->total,
             'fecha_inicio' => $this->fecha_inicio,
             'fecha_fin' => $this->fecha_fin,
-            'estado' => 'PENDIENTE',
+            'estado' => 'REALIZADA',
             'user_id' => Auth()->user()->id,
         ]);
 
@@ -91,6 +90,8 @@ class InicioHotelController extends Component
             'disponibilidad' => 'NO'
         ]);
         $room->save();
+
+        $reserva->habitaciones()->attach($room);
 
         $this->resetUI();
         $this->emit('modal-hide', 'Se realizó la solicitud de la reserva');

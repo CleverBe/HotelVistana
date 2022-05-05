@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ExportReservasPdfController;
 use App\Http\Livewire\AsignarController;
 use App\Http\Livewire\HabitacionesController;
 use App\Http\Livewire\InicioHotelController;
 use App\Http\Livewire\PermisosController;
+use App\Http\Livewire\ReporteReservasController;
 use App\Http\Livewire\RolesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +35,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('roles', RolesController::class);
 Route::get('permisos', PermisosController::class);
 Route::get('asignar', AsignarController::class);
+
+Route::get('reporteDeReservas', ReporteReservasController::class);
+Route::get('reporteReservas/pdf/{user}/{type}/{f1}/{f2}', [ExportReservasPdfController::class, 'reportPDF']);
+Route::get('reporteGananciaTigoM/pdf/{user}/{type}', [ExportReservasPdfController::class, 'reportPDF']);

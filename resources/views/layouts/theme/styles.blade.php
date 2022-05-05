@@ -10,7 +10,7 @@
 <link href="{{ asset('plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('assets/css/dashboard/dash_2.css') }}" rel="stylesheet" type="text/css" class="dashboard-sales" />
 {{-- FIN STYLES PLANTILLA --}}
-<link ref="stylesheet" type="text/css" href="dist/snackbar.min.css" /> 
+<link ref="stylesheet" type="text/css" href="dist/snackbar.min.css" />
 
 <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" type="text/css" />
 <style>
